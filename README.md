@@ -1,6 +1,6 @@
 # Foodie
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+Angular web based on the Udemy course 'The Complete Guide to Angular 2' by Maximillian Scwarzmüller. 
 
 ## Development server
 
