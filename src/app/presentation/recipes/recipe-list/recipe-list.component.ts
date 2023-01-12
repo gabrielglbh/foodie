@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Recipe } from '../recipe.model';
+import { Recipe } from '../../../domain/recipe.model';
 
 @Component({
   selector: 'recipe-list',
