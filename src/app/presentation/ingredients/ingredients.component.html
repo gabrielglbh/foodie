@@ -1,0 +1,14 @@
+<ul class="list-group">
+  <a
+    style="cursor: pointer"
+    class="list-group-item"
+    *ngFor="let ingredient of ingredients"
+  >
+    <div class="row">
+      <div class="col-xs-11">{{ ingredient.name }}</div>
+      <div class="col-xs-1" style="font-weight: bold">
+        {{ ingredient.amount }}
+      </div>
+    </div></a
+  >
+</ul>

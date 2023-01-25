@@ -13,7 +13,12 @@ export class RecipeDetailComponent {
   constructor(private recipeService: RecipeService) {
     this.recipeService.recipeEventEmitter.subscribe(
       (args) =>
-        (this.recipe = new Recipe(args.name, args.description, args.imagePath))
+        (this.recipe = new Recipe(
+          args.name,
+          args.description,
+          args.imagePath,
+          args.ingredients
+        ))
     );
   }
 }
