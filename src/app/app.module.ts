@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShoppingListComponent } from './presentation/shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './presentation/shopping-list/shopping-list-edit/shopping-list-edit.component';
@@ -14,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { DropdownDirectiveDirective } from './presentation/core/dropdown-directive/dropdown-directive.directive';
 import { ShoppingListService } from './application/shopping-list/shopping-list.service';
 import { IngredientsComponent } from './presentation/ingredients/ingredients.component';
+import { AppRoutingModule } from './presentation/core/router/app-routing.module';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { IngredientsComponent } from './presentation/ingredients/ingredients.com
     IngredientsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, Router],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

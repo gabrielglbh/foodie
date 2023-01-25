@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
-  @Output() pageSelected = new EventEmitter<string>();
+
+  constructor(private router: Router) {}
 
   onSelect(page: string) {
-    this.pageSelected.emit(page);
+    if (page === 'recipes') {
+      this.router.navigate(['recipes']);
+    } else {
+      this.router.navigate(['shopping-list']);
+    }
   }
 }
