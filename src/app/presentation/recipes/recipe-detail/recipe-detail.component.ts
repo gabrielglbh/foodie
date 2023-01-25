@@ -1,3 +1,4 @@
+import { RecipeService } from 'src/app/application/recipes/recipes.service';
 import { Component, Input } from '@angular/core';
 import { Recipe } from 'src/app/domain/recipe.model';
 
@@ -7,5 +8,12 @@ import { Recipe } from 'src/app/domain/recipe.model';
   styleUrls: ['./recipe-detail.component.scss'],
 })
 export class RecipeDetailComponent {
-  @Input() recipe: Recipe;
+  recipe: Recipe;
+
+  constructor(private recipeService: RecipeService) {
+    this.recipeService.recipeEventEmitter.subscribe(
+      (args) =>
+        (this.recipe = new Recipe(args.name, args.description, args.imagePath))
+    );
+  }
 }

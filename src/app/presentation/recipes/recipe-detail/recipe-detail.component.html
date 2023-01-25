@@ -1,43 +1,45 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img src="" alt="" class="img-responsive" />
-  </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-xs-8">
-    <h1>{{ recipe.name }}</h1>
-  </div>
-  <div class="col-xs-4">
-    <div class="btn-group" dropdownDirective>
-      <button type="button" class="btn btn-primary dropdown-toggle">
-        Manage Recipe
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Add to Shopping List</a></li>
-        <li><a href="#">Edit Recipe</a></li>
-        <li><a href="#">Remove Recipe</a></li>
-      </ul>
+<div *ngIf="recipe != null">
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="" alt="" class="img-responsive" />
     </div>
   </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-xs-8">{{ recipe.description }}</div>
-  <div class="col-xs-4">
-    <img
-      [src]="recipe.imagePath"
-      alt="{{ recipe.name }}"
-      class="img-responsive"
-      style="max-height: 150px"
-    />
+  <br />
+  <div class="row">
+    <div class="col-xs-8">
+      <h1>{{ recipe.name }}</h1>
+    </div>
+    <div class="col-xs-4">
+      <div class="btn-group" dropdownDirective>
+        <button type="button" class="btn btn-primary dropdown-toggle">
+          Manage Recipe
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Add to Shopping List</a></li>
+          <li><a href="#">Edit Recipe</a></li>
+          <li><a href="#">Remove Recipe</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
+  <br />
+  <div class="row">
+    <div class="col-xs-8">{{ recipe.description }}</div>
+    <div class="col-xs-4">
+      <img
+        [src]="recipe.imagePath"
+        alt="{{ recipe.name }}"
+        class="img-responsive"
+        style="max-height: 150px"
+      />
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">Ingredients</div>
+  </div>
+  <br />
+  <br />
+  <br />
 </div>
-<hr />
-<div class="row">
-  <div class="col-xs-12">Ingredients</div>
-</div>
-<br />
-<br />
-<br />

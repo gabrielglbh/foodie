@@ -1,3 +1,4 @@
+import { RecipeService } from './../../application/recipes/recipes.service';
 import { Component } from '@angular/core';
 import { Recipe } from 'src/app/domain/recipe.model';
 
@@ -5,11 +6,6 @@ import { Recipe } from 'src/app/domain/recipe.model';
   selector: 'recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss'],
+  providers: [RecipeService],
 })
-export class RecipesComponent {
-  recipeDetails: Recipe;
-
-  onSelectedRecipe(recipe: Recipe) {
-    this.recipeDetails = recipe;
-  }
-}
+export class RecipesComponent {}
