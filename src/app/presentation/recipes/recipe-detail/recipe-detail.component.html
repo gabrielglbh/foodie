@@ -24,7 +24,15 @@
 </div>
 <br />
 <div class="row">
-  <div class="col-xs-12">{{ recipe.description }}</div>
+  <div class="col-xs-8">{{ recipe.description }}</div>
+  <div class="col-xs-4">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+      style="max-height: 150px"
+    />
+  </div>
 </div>
 <hr />
 <div class="row">
