@@ -6,18 +6,17 @@ import { Ingredient } from '../../domain/ingredient.model';
   selector: 'shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.scss'],
-  providers: [ShoppingListService],
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[] = [];
 
-  constructor(private shoppingListService: ShoppingListService) {}
+  constructor(private shoppingListService: ShoppingListService) {
+    this.shoppingListService.shoppingListChanged.subscribe(
+      (args) => (this.ingredients = args)
+    );
+  }
 
   ngOnInit(): void {
     this.ingredients = this.shoppingListService.getShoppingLists();
-  }
-
-  onAddedIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
   }
 }
