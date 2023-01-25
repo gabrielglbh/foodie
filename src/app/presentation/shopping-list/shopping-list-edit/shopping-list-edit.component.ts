@@ -21,4 +21,8 @@ export class ShoppingListEditComponent {
       )
     );
   }
+
+  onClearShoppingList() {
+    this.shoppingListService.clearShoppingList();
+  }
 }

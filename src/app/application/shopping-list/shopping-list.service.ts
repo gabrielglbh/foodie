@@ -18,7 +18,16 @@ export class ShoppingListService {
     this.shoppingListChanged.emit(this.shoppingList.slice());
   }
 
-  updateShoppingList() {}
+  clearShoppingList() {
+    this.shoppingList = [];
+    this.shoppingListChanged.emit(this.shoppingList.slice());
+  }
 
-  removeShoppingList() {}
+  removeFromShoppingList(ingredient: Ingredient) {
+    const index = this.shoppingList.indexOf(ingredient, 0);
+    if (index > -1) {
+      this.shoppingList.splice(index, 1);
+    }
+    this.shoppingListChanged.emit(this.shoppingList.slice());
+  }
 }

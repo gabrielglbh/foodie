@@ -1,14 +1,22 @@
-<ul class="list-group">
-  <a
-    style="cursor: pointer"
-    class="list-group-item"
-    *ngFor="let ingredient of ingredients"
-  >
-    <div class="row">
-      <div class="col-xs-11">{{ ingredient.name }}</div>
-      <div class="col-xs-1" style="font-weight: bold">
-        {{ ingredient.amount }}
+<div>
+  <ul *ngIf="ingredients.length != 0" class="list-group">
+    <div *ngFor="let ingredient of ingredients">
+      <a style="cursor: pointer" class="list-group-item col-xs-11">
+        <div class="row">
+          <div class="col-xs-11">{{ ingredient.name }}</div>
+          <div class="col-xs-1" style="font-weight: bold">
+            {{ ingredient.amount }}
+          </div>
+        </div></a
+      >
+      <div class="col-xs-1">
+        <mat-icon
+          (click)="removeIngredient(ingredient)"
+          style="color: red; cursor: pointer"
+          >clear</mat-icon
+        >
       </div>
-    </div></a
-  >
-</ul>
+    </div>
+  </ul>
+  <p *ngIf="ingredients.length == 0">You have no ingredients saved!</p>
+</div>

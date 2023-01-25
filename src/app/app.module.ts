@@ -16,6 +16,7 @@ import { IngredientsComponent } from './presentation/ingredients/ingredients.com
 import { AppRoutingModule } from './presentation/core/router/app-routing.module';
 import { Router } from '@angular/router';
 import { RecipeDetailsNotFoundComponent } from './presentation/recipes/recipe-details-not-found/recipe-details-not-found.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { RecipeDetailsNotFoundComponent } from './presentation/recipes/recipe-de
     IngredientsComponent,
     RecipeDetailsNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, MatIconModule],
   providers: [ShoppingListService, Router],
   bootstrap: [AppComponent],
 })
