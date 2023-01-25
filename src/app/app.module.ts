@@ -15,6 +15,7 @@ import { ShoppingListService } from './application/shopping-list/shopping-list.s
 import { IngredientsComponent } from './presentation/ingredients/ingredients.component';
 import { AppRoutingModule } from './presentation/core/router/app-routing.module';
 import { Router } from '@angular/router';
+import { RecipeDetailsNotFoundComponent } from './presentation/recipes/recipe-details-not-found/recipe-details-not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { Router } from '@angular/router';
     RecipesComponent,
     DropdownDirectiveDirective,
     IngredientsComponent,
+    RecipeDetailsNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [ShoppingListService, Router],

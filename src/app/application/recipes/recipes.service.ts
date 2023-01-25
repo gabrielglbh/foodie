@@ -1,5 +1,4 @@
 import { Ingredient } from './../../domain/ingredient.model';
-import { EventEmitter } from '@angular/core';
 import { Recipe } from 'src/app/domain/recipe.model';
 
 export class RecipeService {
@@ -24,10 +23,12 @@ export class RecipeService {
     ),
   ];
 
-  recipeEventEmitter = new EventEmitter<Recipe>();
-
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(name: string): Recipe {
+    return this.recipes.find((recipe) => recipe.name === name);
   }
 
   addRecipe() {}
