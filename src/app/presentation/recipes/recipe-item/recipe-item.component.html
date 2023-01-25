@@ -1,6 +1,7 @@
 <a
   style="cursor: pointer"
-  routerLink="../recipes/{{ recipe.name }}"
+  [routerLink]="[recipe.name]"
+  routerLinkActive="active"
   class="list-group-item clearfix"
 >
   <div class="row">
