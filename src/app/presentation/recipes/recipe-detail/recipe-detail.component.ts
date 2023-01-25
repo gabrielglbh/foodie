@@ -1,3 +1,4 @@
+import { ShoppingListService } from 'src/app/application/shopping-list/shopping-list.service';
 import { RecipeService } from 'src/app/application/recipes/recipes.service';
 import { Component, Input } from '@angular/core';
 import { Recipe } from 'src/app/domain/recipe.model';
@@ -10,7 +11,10 @@ import { Recipe } from 'src/app/domain/recipe.model';
 export class RecipeDetailComponent {
   recipe: Recipe;
 
-  constructor(private recipeService: RecipeService) {
+  constructor(
+    private recipeService: RecipeService,
+    private shoppingListService: ShoppingListService
+  ) {
     this.recipeService.recipeEventEmitter.subscribe(
       (args) =>
         (this.recipe = new Recipe(
@@ -19,6 +23,12 @@ export class RecipeDetailComponent {
           args.imagePath,
           args.ingredients
         ))
+    );
+  }
+
+  addToShoppingList() {
+    this.recipe.ingredients.forEach((ingredient) =>
+      this.shoppingListService.addToShoppingList(ingredient)
     );
   }
 }
