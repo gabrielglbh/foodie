@@ -21,7 +21,13 @@
               >Add to Shopping List</a
             >
           </li>
-          <li><a style="cursor: pointer">Edit Recipe</a></li>
+          <li>
+            <a
+              style="cursor: pointer"
+              routerLink="/recipes/{{ recipe.name }}/edit"
+              >Edit Recipe</a
+            >
+          </li>
           <li><a style="cursor: pointer">Remove Recipe</a></li>
         </ul>
       </div>

@@ -17,6 +17,7 @@ import { AppRoutingModule } from './presentation/core/router/app-routing.module'
 import { Router } from '@angular/router';
 import { RecipeDetailsNotFoundComponent } from './presentation/recipes/recipe-details-not-found/recipe-details-not-found.component';
 import { MatIconModule } from '@angular/material/icon';
+import { RecipeEditComponent } from './presentation/recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
     DropdownDirectiveDirective,
     IngredientsComponent,
     RecipeDetailsNotFoundComponent,
+    RecipeEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, MatIconModule],
   providers: [ShoppingListService, Router],

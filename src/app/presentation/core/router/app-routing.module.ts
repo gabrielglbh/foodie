@@ -1,3 +1,4 @@
+import { RecipeEditComponent } from './../../recipes/recipe-edit/recipe-edit.component';
 import { RecipeDetailComponent } from './../../recipes/recipe-detail/recipe-detail.component';
 import { ShoppingListComponent } from '../../shopping-list/shopping-list.component';
 import { RecipesComponent } from '../../recipes/recipes.component';
@@ -14,7 +15,9 @@ const routes = [
     component: RecipesComponent,
     children: [
       { path: '', component: RecipeDetailsNotFoundComponent },
+      { path: 'new', component: RecipeEditComponent },
       { path: ':id', component: RecipeDetailComponent },
+      { path: ':id/edit', component: RecipeEditComponent },
     ],
   },
   { path: 'shopping-list', component: ShoppingListComponent },
