@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class IngredientsComponent {
   @Input() ingredients: Ingredient[] = [];
+  @Input() isOnRecipe: boolean = true;
 
   constructor(private shoppingListService: ShoppingListService) {}
 

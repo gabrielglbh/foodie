@@ -1,7 +1,11 @@
 import { Ingredient } from './../../domain/ingredient.model';
 import { Recipe } from 'src/app/domain/recipe.model';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 export class RecipeService {
+  recipeAdded: BehaviorSubject<Recipe[]>;
+  recipeEdit = new BehaviorSubject<number>(null);
+
   private recipes: Recipe[] = [
     new Recipe(
       'Bacon and eggs',
@@ -23,6 +27,10 @@ export class RecipeService {
     ),
   ];
 
+  constructor() {
+    this.recipeAdded = new BehaviorSubject<Recipe[]>(this.recipes);
+  }
+
   getRecipes() {
     return this.recipes.slice();
   }
@@ -31,7 +39,21 @@ export class RecipeService {
     return this.recipes.find((recipe) => recipe.name === name);
   }
 
-  addRecipe() {}
+  removeIngredientFromRecipe(index: number, ingredientIndex: number) {
+    // TODO: Remove ingredient from recipe
+    this.recipes[index].ingredients.splice(ingredientIndex, 1);
+    this.recipeAdded.next(this.recipes.slice());
+  }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipeAdded.next(this.recipes.slice());
+  }
+
+  editRecipe(index: number, recipe: Recipe) {
+    this.recipes[index] = recipe;
+    this.recipeAdded.next(this.recipes.slice());
+  }
 
   updateRecipe() {}
 

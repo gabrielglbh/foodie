@@ -2,6 +2,7 @@
   style="cursor: pointer"
   [routerLink]="[recipe.name]"
   routerLinkActive="active"
+  (click)="onRecipeClicked()"
   class="list-group-item clearfix"
 >
   <div class="row">

@@ -23,7 +23,12 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit" *ngIf="!isEditing">
+          <button
+            class="btn btn-success"
+            type="submit"
+            *ngIf="!isEditing"
+            [disabled]="!ingredientForm.valid"
+          >
             Add
           </button>
           <button class="btn btn-success" type="submit" *ngIf="isEditing">

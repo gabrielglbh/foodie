@@ -1,9 +1,9 @@
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Ingredient } from 'src/app/domain/ingredient.model';
 
 export class ShoppingListService {
-  shoppingListChanged = new Subject<Ingredient[]>();
-  ingredientEdit = new Subject<number>();
+  shoppingListChanged = new BehaviorSubject<Ingredient[]>([]);
+  ingredientEdit = new BehaviorSubject<number>(null);
 
   private shoppingList: Ingredient[] = [];
 
