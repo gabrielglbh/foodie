@@ -9,7 +9,7 @@ import { RecipeListComponent } from './presentation/recipes/recipe-list/recipe-l
 import { RecipeItemComponent } from './presentation/recipes/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './presentation/recipes/recipe-detail/recipe-detail.component';
 import { RecipesComponent } from './presentation/recipes/recipes.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirectiveDirective } from './presentation/core/dropdown-directive/dropdown-directive.directive';
 import { ShoppingListService } from './application/shopping-list/shopping-list.service';
 import { IngredientsComponent } from './presentation/ingredients/ingredients.component';
@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 import { RecipeDetailsNotFoundComponent } from './presentation/recipes/recipe-details-not-found/recipe-details-not-found.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RecipeEditComponent } from './presentation/recipes/recipe-edit/recipe-edit.component';
+import { ValidatorService } from './application/validators/validators.service';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,14 @@ import { RecipeEditComponent } from './presentation/recipes/recipe-edit/recipe-e
     RecipeDetailsNotFoundComponent,
     RecipeEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, MatIconModule],
-  providers: [ShoppingListService, Router],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    MatIconModule,
+    ReactiveFormsModule,
+  ],
+  providers: [ShoppingListService, ValidatorService, Router],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

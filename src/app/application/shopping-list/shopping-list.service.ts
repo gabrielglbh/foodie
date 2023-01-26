@@ -3,18 +3,25 @@ import { Ingredient } from 'src/app/domain/ingredient.model';
 
 export class ShoppingListService {
   shoppingListChanged = new Subject<Ingredient[]>();
+  ingredientEdit = new Subject<number>();
 
-  private shoppingList: Ingredient[] = [
-    new Ingredient('Eggs', 5),
-    new Ingredient('Bacon', 1),
-  ];
+  private shoppingList: Ingredient[] = [];
 
   getShoppingLists() {
     return this.shoppingList.slice();
   }
 
+  getShoppingListItem(index: number) {
+    return this.shoppingList[index];
+  }
+
   addToShoppingList(ingredient: Ingredient) {
     this.shoppingList.push(ingredient);
+    this.shoppingListChanged.next(this.shoppingList.slice());
+  }
+
+  editToShoppingList(index: number, ingredient: Ingredient) {
+    this.shoppingList[index] = ingredient;
     this.shoppingListChanged.next(this.shoppingList.slice());
   }
 

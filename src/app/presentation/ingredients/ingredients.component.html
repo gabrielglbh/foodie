@@ -1,7 +1,11 @@
 <div>
   <ul *ngIf="ingredients.length != 0" class="list-group">
-    <div *ngFor="let ingredient of ingredients">
-      <a style="cursor: pointer" class="list-group-item col-xs-11">
+    <div *ngFor="let ingredient of ingredients; let i = index">
+      <a
+        style="cursor: pointer"
+        class="list-group-item col-xs-11"
+        (click)="onEditIngredient(i)"
+      >
         <div class="row">
           <div class="col-xs-11">{{ ingredient.name }}</div>
           <div class="col-xs-1" style="font-weight: bold">

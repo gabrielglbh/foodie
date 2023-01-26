@@ -15,4 +15,8 @@ export class IngredientsComponent {
   removeIngredient(ingredient: Ingredient) {
     this.shoppingListService.removeFromShoppingList(ingredient);
   }
+
+  onEditIngredient(index: number) {
+    this.shoppingListService.ingredientEdit.next(index);
+  }
 }
