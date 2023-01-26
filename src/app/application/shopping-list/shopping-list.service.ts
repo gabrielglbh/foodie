@@ -1,8 +1,8 @@
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from 'src/app/domain/ingredient.model';
 
 export class ShoppingListService {
-  shoppingListChanged = new EventEmitter<Ingredient[]>();
+  shoppingListChanged = new Subject<Ingredient[]>();
 
   private shoppingList: Ingredient[] = [
     new Ingredient('Eggs', 5),
@@ -15,12 +15,12 @@ export class ShoppingListService {
 
   addToShoppingList(ingredient: Ingredient) {
     this.shoppingList.push(ingredient);
-    this.shoppingListChanged.emit(this.shoppingList.slice());
+    this.shoppingListChanged.next(this.shoppingList.slice());
   }
 
   clearShoppingList() {
     this.shoppingList = [];
-    this.shoppingListChanged.emit(this.shoppingList.slice());
+    this.shoppingListChanged.next(this.shoppingList.slice());
   }
 
   removeFromShoppingList(ingredient: Ingredient) {
@@ -28,6 +28,6 @@ export class ShoppingListService {
     if (index > -1) {
       this.shoppingList.splice(index, 1);
     }
-    this.shoppingListChanged.emit(this.shoppingList.slice());
+    this.shoppingListChanged.next(this.shoppingList.slice());
   }
 }
