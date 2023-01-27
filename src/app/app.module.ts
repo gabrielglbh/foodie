@@ -1,3 +1,4 @@
+import { RecipeService } from 'src/app/application/recipes/recipes.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -42,7 +43,7 @@ import { ValidatorService } from './application/validators/validators.service';
     MatIconModule,
     ReactiveFormsModule,
   ],
-  providers: [ShoppingListService, ValidatorService, Router],
+  providers: [ShoppingListService, ValidatorService, Router, RecipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
