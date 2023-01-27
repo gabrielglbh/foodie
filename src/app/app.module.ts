@@ -20,6 +20,7 @@ import { RecipeDetailsNotFoundComponent } from './presentation/recipes/recipe-de
 import { MatIconModule } from '@angular/material/icon';
 import { RecipeEditComponent } from './presentation/recipes/recipe-edit/recipe-edit.component';
 import { ValidatorService } from './application/validators/validators.service';
+import { CustomUppercasePipe } from './presentation/core/pipes/custom-uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ValidatorService } from './application/validators/validators.service';
     IngredientsComponent,
     RecipeDetailsNotFoundComponent,
     RecipeEditComponent,
+    CustomUppercasePipe,
   ],
   imports: [
     BrowserModule,
