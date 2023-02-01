@@ -6,7 +6,7 @@ export class RecipeService {
   recipesChanged: BehaviorSubject<Recipe[]>;
   recipeEdit = new BehaviorSubject<number>(null);
 
-  private recipes: Recipe[] = [
+  /*private recipes: Recipe[] = [
     new Recipe(
       'Bacon and eggs',
       'A super duper fast and easy breakfast',
@@ -25,7 +25,8 @@ export class RecipeService {
       'https://www.mashed.com/img/gallery/the-reason-milk-and-cookies-taste-great-together/intro-1648138138.webp',
       [new Ingredient('Cookies', 8), new Ingredient('Milk', 1)]
     ),
-  ];
+  ];*/
+  private recipes: Recipe[] = [];
 
   constructor() {
     this.recipesChanged = new BehaviorSubject<Recipe[]>(this.recipes);
@@ -37,6 +38,11 @@ export class RecipeService {
 
   getRecipe(name: string): Recipe {
     return this.recipes.find((recipe) => recipe.name === name);
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
 
   addRecipe(recipe: Recipe) {

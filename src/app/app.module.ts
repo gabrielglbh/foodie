@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RecipeEditComponent } from './presentation/recipes/recipe-edit/recipe-edit.component';
 import { ValidatorService } from './application/validators/validators.service';
 import { CustomUppercasePipe } from './presentation/core/pipes/custom-uppercase.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CustomUppercasePipe } from './presentation/core/pipes/custom-uppercase.
     FormsModule,
     MatIconModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [ShoppingListService, ValidatorService, Router, RecipeService],
   bootstrap: [AppComponent],
