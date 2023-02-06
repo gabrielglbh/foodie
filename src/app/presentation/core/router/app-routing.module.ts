@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 type PathMatch = 'full' | 'prefix' | undefined;
@@ -20,7 +20,9 @@ const routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
