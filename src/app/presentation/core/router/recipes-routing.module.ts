@@ -8,7 +8,7 @@ import { RecipeDetailsNotFoundComponent } from '../../recipes/recipe-details-not
 
 const routes = [
   {
-    path: 'recipes',
+    path: '',
     component: RecipesComponent,
     children: [
       { path: '', component: RecipeDetailsNotFoundComponent },
