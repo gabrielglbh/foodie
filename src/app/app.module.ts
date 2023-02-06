@@ -1,11 +1,10 @@
+import { ShoppingListModule } from './presentation/shopping-list/shopping-list.module';
 import { RecipesModule } from './presentation/recipes/recipes.module';
 import { RecipeService } from 'src/app/application/recipes/recipes.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ShoppingListComponent } from './presentation/shopping-list/shopping-list.component';
-import { ShoppingListEditComponent } from './presentation/shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { HeaderComponent } from './presentation/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirectiveDirective } from './presentation/core/dropdown-directive/dropdown-directive.directive';
@@ -21,8 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingListComponent,
-    ShoppingListEditComponent,
     HeaderComponent,
     DropdownDirectiveDirective,
     IngredientsComponent,
@@ -36,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     RecipesModule,
+    ShoppingListModule,
   ],
   providers: [ShoppingListService, ValidatorService, Router, RecipeService],
   bootstrap: [AppComponent],
