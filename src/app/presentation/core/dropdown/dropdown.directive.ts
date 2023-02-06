@@ -8,7 +8,7 @@ import {
 @Directive({
   selector: '[dropdownDirective]',
 })
-export class DropdownDirectiveDirective {
+export class DropdownDirective {
   @HostBinding('class.open') isOpen = false;
 
   constructor(private elRef: ElementRef) {}
